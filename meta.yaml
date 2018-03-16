@@ -1,72 +1,48 @@
 package:
   name: dolo
-  version: "0.4.9.3"
+  version: "0.4.9.7"
 
 source:
-  fn: dolo-0.4.9.3.tar.gz
-  url: https://pypi.python.org/packages/source/d/dolo/dolo-0.4.9.3.tar.gz
-  md5: 04473ab1e249e692859cdcc98d119fcc
-#  patches:
-   # List any patch files here
-   # - fix.patch
+  fn: dolo-0.4.9.7.tar.gz
+  path: ../dolo/
+  url: https://github.com/EconForge/dolo/archive/v0.4.9.7.tar.gz
+  md5: 47b515a89685b46da369eafc21c3901e
 
- build:
+build:
   noarch_python: True
-  # preserve_egg_dir: True
-
-  # If this is a new build for the same version, increment the build
-  # number. If you do not include this key, it defaults to 0.
-  # number: 1
 
 requirements:
   build:
     - python
-    - setuptools
     - pyyaml
-    - numba >=0.13
+    - numba
     - numpy
-    - numexpr
     - sympy
     - pandas
+    - xarray
+    - ipython
+    - interpolation
+    - ruamel.yaml
+    - quantecon
+    - dolang
 
   run:
     - python
     - pyyaml
-    - numba >=0.13
+    - numba
     - numpy
-    - numexpr
     - sympy
     - pandas
+    - xarray
+    - ipython
+    - interpolation
+    - ruamel.yaml
+    - quantecon
+    - dolang
 
-test:
-  # Python imports
-  imports:
-    - dolo
-    - dolo.algos
-    - dolo.algos.dtcscc
-    - dolo.algos.dtmscc
-    - dolo.algos.dynare
-    - dolo.compiler
-    - dolo.misc
-    - dolo.numeric
-    - dolo.numeric.discretization
-    - dolo.numeric.extern
-    - dolo.numeric.interpolation
-    - dolo.numeric.interpolation.tests
-    - dolo.numeric.optimize
-    - dolo.tests
-
-  # commands:
-    # You can put test commands to be run here.  Use this to test that the
-    # entry points work.
-
-
-  # You can also put a file called run_test.py in the recipe that will be run
-  # at test time.
-
-  # requires:
-    # Put any additional test requirements here.  For example
-    # - nose
+  test:
+    imports:
+      - dolo
 
 about:
   home: http://albop.github.com/dolo/
