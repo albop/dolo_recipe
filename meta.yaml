@@ -9,11 +9,12 @@ source:
   md5: 47b515a89685b46da369eafc21c3901e
 
 build:
-  noarch_python: True
+  number: 2
+  noarch: python
 
 requirements:
   build:
-    - python
+    - python >=3.6
     - pyyaml
     - numba
     - numpy
@@ -27,7 +28,7 @@ requirements:
     - dolang
 
   run:
-    - python
+    - python >=3.6
     - pyyaml
     - numba
     - numpy
